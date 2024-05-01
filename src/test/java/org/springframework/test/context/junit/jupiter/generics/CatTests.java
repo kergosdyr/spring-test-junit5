@@ -17,7 +17,7 @@
 package org.springframework.test.context.junit.jupiter.generics;
 
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit.jupiter.comics.Cat;
+import comics.Cat;
 
 /**
  * Parameterized test class for integration tests that demonstrate support for

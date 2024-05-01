@@ -26,8 +26,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit.jupiter.comics.Dog;
-import org.springframework.test.context.junit.jupiter.comics.Person;
+import comics.Dog;
+import comics.Person;
 
 /**
  * Integration tests which demonstrate support for autowiring individual

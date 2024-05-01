@@ -28,7 +28,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit.jupiter.TestConfig;
-import org.springframework.test.context.junit.jupiter.comics.Character;
+import comics.Character;
 
 /**
  * Abstract base class for integration tests that demonstrate support for

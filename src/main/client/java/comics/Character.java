@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.springframework.test.context.junit.jupiter.comics;
+package comics;
 
 /**
  * Demo class for tests.

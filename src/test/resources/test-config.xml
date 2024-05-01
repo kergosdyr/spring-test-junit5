@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:c="http://www.springframework.org/schema/c" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	   xmlns:c="http://www.springframework.org/schema/c" xmlns:spring="http://www.springframework.org/schema/p"
+	   xmlns:p="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="dilbert" class="org.springframework.test.context.junit.jupiter.comics.Person" c:_="Dilbert" />
+	<bean id="dilbert" class="comics.Person" c:_="Dilbert" />
 
-	<bean id="wally" class="org.springframework.test.context.junit.jupiter.comics.Person" c:_="Wally" />
+	<bean id="wally" class="comics.Person" c:_="Wally" />
+
+	<p:component-scan base-package="components">
+		<p:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+	</p:component-scan>
 
 </beans>

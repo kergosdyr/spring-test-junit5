@@ -23,7 +23,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -31,7 +30,10 @@ import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit.jupiter.SpringExtensionTestSuite;
-import org.springframework.test.context.junit.jupiter.comics.Person;
+
+import comics.Person;
+import components.MyComponents;
+import components.MyServices;
 
 /**
  * Integration tests which demonstrate that the Spring TestContext Framework can
@@ -51,6 +53,12 @@ class XmlSpringExtensionTests {
 
 	@Autowired
 	Person dilbert;
+
+	@Autowired
+	MyComponents myComponents;
+
+	@Autowired
+	MyServices myServices;
 
 	@Autowired
 	List<Person> people;
@@ -95,6 +103,18 @@ class XmlSpringExtensionTests {
 	void autowiredParameterOfList(@Autowired List<Person> peopleParam) {
 		assertNotNull(peopleParam, "list of people should have been @Autowired by Spring");
 		assertEquals(2, peopleParam.size(), "Number of people in context");
+	}
+
+	@Test
+	void autowiredTestWithComponentsScan() {
+		assertNotNull(this.myComponents, "MyComponents should have been @Autowired by Spring");
+		assertEquals("MyComponent", this.myComponents.getMyComponent(), "MyComponent's name");
+	}
+
+	@Test
+	void autowiredTestWithServicesScan() {
+		assertNotNull(this.myServices, "MyServices should have been @Autowired by Spring");
+		assertEquals("MyService", this.myServices.getMyService(), "MyService");
 	}
 
 }

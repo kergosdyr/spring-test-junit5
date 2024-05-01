@@ -27,7 +27,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit.jupiter.SpringJUnitJupiterConfig;
 import org.springframework.test.context.junit.jupiter.TestConfig;
-import org.springframework.test.context.junit.jupiter.comics.Character;
+import comics.Character;
 
 /**
  * Interface for integration tests that demonstrate support for interface default

@@ -20,9 +20,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.test.context.junit.jupiter.comics.Cat;
-import org.springframework.test.context.junit.jupiter.comics.Dog;
-import org.springframework.test.context.junit.jupiter.comics.Person;
+import comics.Cat;
+import comics.Dog;
+import comics.Person;
 
 /**
  * Demo config for tests.

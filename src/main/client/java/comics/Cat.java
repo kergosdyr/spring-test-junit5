@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.springframework.test.context.junit.jupiter.comics;
+package comics;
 
 /**
  * Demo class for tests.
@@ -22,9 +22,9 @@ package org.springframework.test.context.junit.jupiter.comics;
  * @author Sam Brannen
  * @since 5.0
  */
-public class Dog extends Character {
+public class Cat extends Character {
 
-	public Dog(String name) {
+	public Cat(String name) {
 		super(name);
 	}
 

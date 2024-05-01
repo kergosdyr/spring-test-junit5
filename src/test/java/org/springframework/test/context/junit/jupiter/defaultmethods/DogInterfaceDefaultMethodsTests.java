@@ -17,7 +17,7 @@
 package org.springframework.test.context.junit.jupiter.defaultmethods;
 
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit.jupiter.comics.Dog;
+import comics.Dog;
 
 /**
  * Parameterized test class for integration tests that demonstrate support for

@@ -37,9 +37,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit.jupiter.comics.Cat;
-import org.springframework.test.context.junit.jupiter.comics.Dog;
-import org.springframework.test.context.junit.jupiter.comics.Person;
+import comics.Cat;
+import comics.Dog;
+import comics.Person;
 
 /**
  * Integration tests which demonstrate that the Spring TestContext Framework can
