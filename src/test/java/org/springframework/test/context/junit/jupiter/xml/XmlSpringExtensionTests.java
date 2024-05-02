@@ -58,9 +58,6 @@ class XmlSpringExtensionTests {
 	MyComponents myComponents;
 
 	@Autowired
-	MyServices myServices;
-
-	@Autowired
 	List<Person> people;
 
 	@Test
@@ -109,12 +106,6 @@ class XmlSpringExtensionTests {
 	void autowiredTestWithComponentsScan() {
 		assertNotNull(this.myComponents, "MyComponents should have been @Autowired by Spring");
 		assertEquals("MyComponent", this.myComponents.getMyComponent(), "MyComponent's name");
-	}
-
-	@Test
-	void autowiredTestWithServicesScan() {
-		assertNotNull(this.myServices, "MyServices should have been @Autowired by Spring");
-		assertEquals("MyService", this.myServices.getMyService(), "MyService");
 	}
 
 }

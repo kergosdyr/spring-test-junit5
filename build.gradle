@@ -12,6 +12,10 @@ ext.junitVersion         = '5.10.2'
 ext.log4JVersion         = '2.11.1'
 ext.servletApiVersion    = '3.1.0'
 ext.springVersion        = '4.3.14.RELEASE'
+ext.jpaVersion           = '1.11.23.RELEASE' // 이 버전은 Spring 4.3.x와 호환됩니다.
+
+//java 1.8
+sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
@@ -23,6 +27,16 @@ dependencies {
 	implementation("org.springframework:spring-context:${springVersion}")
 	implementation("org.springframework:spring-test:${springVersion}")
 	implementation("org.junit.jupiter:junit-jupiter-api")
+	// Spring Data JPA 추가
+	implementation("org.springframework.data:spring-data-jpa:${jpaVersion}")
+
+	// H2 데이터베이스 추가
+	runtimeOnly('com.h2database:h2:2.2.224')
+	implementation("org.hibernate:hibernate-core:5.2.17.Final")
+
+// Hibernate EntityManager, JPA 호환을 위해 필요
+	implementation("org.hibernate:hibernate-entitymanager:5.2.17.Final")
+
 
 	testImplementation("org.springframework:spring-webmvc:${springVersion}")
 	testImplementation("javax.servlet:javax.servlet-api:${servletApiVersion}")
@@ -39,16 +53,10 @@ dependencies {
 	testImplementation("org.apache.logging.log4j:log4j-slf4j-impl:${log4JVersion}")
 }
 
-compileJava {
-	sourceCompatibility = 1.8
-	targetCompatibility = 1.8
+processResources {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
-compileTestJava {
-	sourceCompatibility = 1.8
-	targetCompatibility = 1.8
-	options.compilerArgs += '-parameters'
-}
 
 sourceSets {
 	main {
@@ -57,6 +65,7 @@ sourceSets {
 		}
 		resources {
 			srcDir 'src/main/resources'
+			exclude '**/META-INF/persistence.xml'
 		}
 	}
 	test {
